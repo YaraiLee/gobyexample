@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # `zeroval` 在 `main` 函数中不能改变 `i` 的值，但是
 # `zeroptr` 可以，因为它有这个变量的内存地址的
 # 引用。
