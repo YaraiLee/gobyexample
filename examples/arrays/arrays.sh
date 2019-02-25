@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # 注意，在使用 `fmt.Println` 来打印数组的时候，会使用
 # `[v1 v2 v3 ...]` 的格式显示。
 $ go run arrays.go
