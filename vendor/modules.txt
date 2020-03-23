@@ -1,0 +1,8 @@
+# github.com/bmizerany/pat v0.0.0-20170815010413-6226ea591a40
+github.com/bmizerany/pat
+# github.com/bmizerany/pq v0.0.0-20131128184720-da2b95e392c1
+github.com/bmizerany/pq
+# github.com/russross/blackfriday v2.0.0+incompatible
+github.com/russross/blackfriday
+# github.com/shurcooL/sanitized_anchor_name v1.0.0
+github.com/shurcooL/sanitized_anchor_name
