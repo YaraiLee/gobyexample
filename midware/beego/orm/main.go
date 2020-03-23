@@ -7,7 +7,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/astaxie/beego/orm"
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -21,14 +20,66 @@ func init() {
 func main() {
 	o := orm.NewOrm()
 	o.Using("default") // 默认使用 default，你可以指定为其他数据库
+	//insert
+	//profile := new(Profile)
+	//profile.Age = 30
+	//
+	//user := new(User)
+	//user.Profile = profile
+	//user.Name = "slene"
 
-	profile := new(Profile)
-	profile.Age = 30
+	//fmt.Println(o.Insert(profile))
+	//fmt.Println(o.Insert(user))
 
-	user := new(User)
-	user.Profile = profile
-	user.Name = "slene"
+	////InsertMulti 并行插入多条
+	//users := []User{
+	//	{Name: "lyl", Profile: &Profile{Id: 3}},
+	//	{Name: "astaxie", Profile: &Profile{Id: 4}},
+	//	{Name: "unknown", Profile: &Profile{Id: 5}},
+	//}
+	//
+	//successNums, err := o.InsertMulti(100, users)
+	//if nil != err {
+	//	panic(err)
+	//}
+	//fmt.Println(successNums)
+	//read
+	//user := User{Id: 1}
+	//err := o.Read(&user)
+	//if err == orm.ErrNoRows {
+	//	fmt.Println("查询不到")
+	//} else if err == orm.ErrMissPK {
+	//	fmt.Println("找不到主键")
+	//} else {
+	//	fmt.Println(user.Id, user.Name)
+	//}
 
-	fmt.Println(o.Insert(profile))
-	fmt.Println(o.Insert(user))
+	////ReadOrCreate
+	//user := User{Name: "slene"}
+	//profile := new(Profile)
+	//profile.Age = 10
+	//user.Profile = profile
+	//
+	//// 三个返回参数依次为：是否新创建的，对象 Id 值，错误
+	//if created, id, err := o.ReadOrCreate(&user, "Name"); err == nil {
+	//	if created {
+	//		fmt.Println("New Insert an object. Id:", id)
+	//	} else {
+	//		fmt.Println("Get an object. Id:", id)
+	//	}
+	//} else {
+	//	panic(err)
+	//}
+
+	//update
+	//user := User{Name: "slene"}
+	//if err := o.Read(&user, "Name"); nil == err {
+	//	user.Profile.Id = 2
+	//	fmt.Println(o.Update(&user))
+	//}
+
+	//del
+	//if num, err := o.Delete(&User{Id: 1}); err == nil {
+	//	fmt.Println(num)
+	//}
 }
