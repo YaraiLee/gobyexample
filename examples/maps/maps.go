@@ -23,6 +23,10 @@ func main() {
     v1 := m["k1"]
     fmt.Println("v1: ", v1)
 
+    //修改值
+    m["k1"] = 10
+    fmt.Println("map:", m)
+
     // 当对一个 map 调用内建的 `len` 时，返回的是键值对
     // 数目
     fmt.Println("len:", len(m))
