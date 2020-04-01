@@ -12,9 +12,13 @@ import (
 )
 
 func init() {
-	orm.RegisterDriver("mysql", orm.DRMySQL)
+	_ = orm.RegisterDriver("mysql", orm.DRMySQL)
 
-	orm.RegisterDataBase("default", "mysql", "root:12345678@/beego_orm?charset=utf8")
+	_ = orm.RegisterDataBase("default", "mysql", "root:12345678@/beego_orm?charset=utf8")
+	// 需要在init中注册定义的model
+	orm.RegisterModel(new(User), new(Post), new(Profile), new(Tag))
+	//创建user，post，profile，tag表
+	_ = orm.RunSyncdb("default", false, true)
 }
 
 func main() {
@@ -82,4 +86,13 @@ func main() {
 	//if num, err := o.Delete(&User{Id: 1}); err == nil {
 	//	fmt.Println(num)
 	//}
+
+	//datainit(o)
+
+	one2one(o)
+	one2many(o)
+	many2many(o)
+
+	o2o_o2mInsert(o)
+	m2mInsert(o)
 }
